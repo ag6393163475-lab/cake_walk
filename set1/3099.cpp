@@ -1,18 +1,21 @@
 #include<iostream>
 using namespace std;
-int main(){
-    int n; int m;
-    cin>> n>>m;
-    int sum=0;
-        int sum1=0;
-        for(int i=1;i<=n;i++){           
-            if(i%m==0){  
-                sum1+=i;
-            }else{               
-                sum+=i;               
-            }
-        }
-        cout<<sum-sum1;
-    
+
+int main() {
+    int x;
+    cin >> x;
+
+    int temp = x;
+    int sum = 0;
+    while(temp > 0) {
+        sum += temp % 10;
+        temp /= 10;
+    }
+    if(x % sum == 0) {
+        cout << sum;
+    } else {
+        cout << -1;
+    }
+
     return 0;
 }
